@@ -1,0 +1,211 @@
+{
+  "machines": [
+    {
+      "machineName": "brutus",
+      "ipAddress": "192.168.0.8",
+      "role": "K3s Cluster Node",
+      "operatingSystem": "Debian 13",
+      "software": {
+        "vms": []
+      },
+      "hardware": {
+        "cpu": "Unknown",
+        "ram": "Unknown",
+        "networkPorts": 1,
+        "networkPortSpeedGbps": 1
+      },
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "machineName": "astronomican",
+      "ipAddress": "192.168.0.5",
+      "role": "DNS/DHCP Server",
+      "operatingSystem": "Debian 13.2",
+      "software": {
+        "vms": []
+      },
+      "hardware": {
+        "cpu": "Unknown",
+        "ram": "Unknown",
+        "networkPorts": 1,
+        "networkPortSpeedGbps": 1
+      },
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "machineName": "truenas",
+      "ipAddress": "192.168.0.10",
+      "role": "Storage Server",
+      "operatingSystem": "TrueNAS",
+      "software": {
+        "vms": []
+      },
+      "hardware": {
+        "cpu": "Unknown",
+        "ram": "Unknown",
+        "networkPorts": 1,
+        "networkPortSpeedGbps": 1
+      },
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "machineName": "seed",
+      "ipAddress": "192.168.0.100",
+      "role": "Application Host",
+      "operatingSystem": "Unknown",
+      "software": {
+        "vms": []
+      },
+      "hardware": {
+        "cpu": "Unknown",
+        "ram": "Unknown",
+        "networkPorts": 1,
+        "networkPortSpeedGbps": 1
+      },
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "machineName": "node-control-0",
+      "ipAddress": "192.168.0.30",
+      "role": "K8s Control Plane",
+      "operatingSystem": "Unknown",
+      "software": {
+        "vms": []
+      },
+      "hardware": {
+        "cpu": "Unknown",
+        "ram": "Unknown",
+        "networkPorts": 1,
+        "networkPortSpeedGbps": 1
+      },
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "machineName": "node-control-1",
+      "ipAddress": "192.168.0.31",
+      "role": "K8s Control Plane",
+      "operatingSystem": "Unknown",
+      "software": {
+        "vms": []
+      },
+      "hardware": {
+        "cpu": "Unknown",
+        "ram": "Unknown",
+        "networkPorts": 1,
+        "networkPortSpeedGbps": 1
+      },
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "machineName": "node-control-2",
+      "ipAddress": "192.168.0.32",
+      "role": "K8s Control Plane",
+      "operatingSystem": "Unknown",
+      "software": {
+        "vms": []
+      },
+      "hardware": {
+        "cpu": "Unknown",
+        "ram": "Unknown",
+        "networkPorts": 1,
+        "networkPortSpeedGbps": 1
+      },
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "machineName": "node-gpu-0",
+      "ipAddress": "192.168.0.12",
+      "role": "K8s Worker (GPU)",
+      "operatingSystem": "Unknown",
+      "software": {
+        "vms": []
+      },
+      "hardware": {
+        "cpu": "Unknown",
+        "ram": "Unknown",
+        "networkPorts": 1,
+        "networkPortSpeedGbps": 1,
+        "gpu": "GPU Enabled"
+      },
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "name": "omada",
+      "ipAddress": "192.168.0.49",
+      "type": "controller",
+      "notes": "Network Controller",
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "name": "ap1",
+      "ipAddress": "192.168.0.2",
+      "type": "wifi",
+      "notes": "Access Point 1",
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    },
+    {
+      "name": "ap2",
+      "ipAddress": "192.168.0.3",
+      "type": "wifi",
+      "notes": "Access Point 2",
+      "ports": [
+        {
+          "portName": "eth0",
+          "speedGbps": 1
+        }
+      ]
+    }
+  ]
+}

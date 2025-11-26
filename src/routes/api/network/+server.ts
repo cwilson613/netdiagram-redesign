@@ -7,30 +7,30 @@ import type { RequestHandler } from './$types';
 export const prerender = false;
 
 export const GET: RequestHandler = async () => {
-	const filePath = '/data/network.json';
+	// Try mounted volume first, then fallback to built-in static file
+	const paths = [
+		'/data/network.json',
+		'./build/client/data/network.json',
+		'./static/data/network.json'
+	];
 
-	try {
-		// Check if file exists
-		if (!existsSync(filePath)) {
-			console.warn(`Network data file not found at ${filePath}, returning empty structure`);
-			return json({
-				machines: [],
-				devices: []
-			});
+	for (const filePath of paths) {
+		try {
+			if (existsSync(filePath)) {
+				const fileContent = await readFile(filePath, 'utf-8');
+				const networkData = JSON.parse(fileContent);
+				console.log(`Successfully loaded network data from ${filePath}`);
+				return json(networkData);
+			}
+		} catch (error) {
+			console.error(`Error reading from ${filePath}:`, error);
 		}
-
-		// Read and parse the file
-		const fileContent = await readFile(filePath, 'utf-8');
-		const networkData = JSON.parse(fileContent);
-
-		return json(networkData);
-	} catch (error) {
-		console.error('Error reading network data:', error);
-
-		// Return empty structure on error
-		return json({
-			machines: [],
-			devices: []
-		});
 	}
+
+	// If no file found, return empty structure
+	console.warn('Network data file not found in any location, returning empty structure');
+	return json({
+		machines: [],
+		devices: []
+	});
 };
